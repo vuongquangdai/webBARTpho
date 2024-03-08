@@ -1,0 +1,54 @@
+{% extends 'top.html' %}
+
+{% block title %}Chi tiết luận văn{% endblock %}
+
+{% block content %}
+
+<div class="detail">
+    <h1 class="mt-5 heading">Chi Tiết Luận Văn</h1>
+    {% if 'username' in session %}
+        {% set saved = data[0] in saved_thesis_id %}
+        {% if saved %}
+            <button class="deleteThesisButton" class="detail-save" data-thesis-id="{{ data[0] }}"><i class="fa-solid fa-bookmark" style="color: #0d77fd;"></i></button>
+        {% else %}
+            <button class="saveThesisButton" class="detail-save" data-thesis-id="{{ data[0] }}"><i class="fa-regular fa-bookmark"></i></button>
+        {% endif %}
+    {% endif %}
+    <!-- <button id="saveThesisButton" class="detail-save" data-thesis-id="{{ data[0] }}"><i class="fa-regular fa-bookmark"></i></button> -->
+</div>
+<button class="btn btn-primary goback" id="goBackButton">Quay lại</button>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ data[3] }}</h5>
+        <p class="card-text"><strong>Mã:</strong> {{ data[1] }}</p>
+        <p class="card-text"><strong>Khoa:</strong> {{ data[2] }}</p>
+        <p class="card-text"><strong>Họ Tên:</strong> {{ data[4] }}</p>
+        <p class="card-text"><strong>MSSV:</strong> {{ data[5] }}</p>
+        <p class="card-text"><strong>Khóa:</strong> {{ data[6] }}</p>
+        <p class="card-text"><strong>GVHD:</strong> {{ data[7] }}</p>
+        <p class="card-text"><strong>Tóm Tắt:</strong></p>
+        <p class="card-text"> {{ data[8] }}</p>
+        <p class="card-text"> {{ data[9] }}</p>
+        <p class="card-text"> {{ data[10] }}</p>
+    </div>
+</div>
+<div class="foot"></div>
+
+<script>
+    document.getElementById('goBackButton').addEventListener('click', function() {
+        window.history.back();
+    });
+
+    // document.getElementById('saveThesisButton').addEventListener('click', function() {
+    //     var thesisId = this.getAttribute('data-thesis-id');
+    //     var loggedIn = "{{ 'username' in session }}";
+    //     if (loggedIn=="False") {
+    //         window.location.href = '/login';
+    //     } else {
+    //         saveFavoriteThesis(thesisId);
+    //     }
+    // });
+</script>
+
+{% endblock %}

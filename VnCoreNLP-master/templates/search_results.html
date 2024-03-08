@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết Quả Tìm Kiếm</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 heading">Kết Quả Tìm Kiếm</h1>
+
+        <p>Kết quả tìm kiếm cho từ khóa: <strong>{{ keyword }}</strong></p>
+
+        <ul class="list-group">
+            {% for result in results %}
+                <li class="list-group-item">
+                    <a href="/detail/{{ result.id }}">{{ result.detai }}</a> - Độ tương tự: {{ result.score|round(2) }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

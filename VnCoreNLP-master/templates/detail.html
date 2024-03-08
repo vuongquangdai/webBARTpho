@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Luận Văn</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 heading">Chi Tiết Luận Văn</h1>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">{{ data[2] }}</h5>
+                <p class="card-text"><strong>Mã:</strong> {{ data[1] }}</p>
+                <p class="card-text"><strong>Họ Tên:</strong> {{ data[3] }}</p>
+                <p class="card-text"><strong>MSSV:</strong> {{ data[4] }}</p>
+                <p class="card-text"><strong>Khóa:</strong> {{ data[5] }}</p>
+                <p class="card-text"><strong>GVHD:</strong> {{ data[6] }}</p>
+                <p class="card-text"><strong>Tóm Tắt:</strong></p>
+                <p class="card-text"> {{ data[7] }}</p>
+                <p class="card-text"> {{ data[8] }}</p>
+                <p class="card-text"> {{ data[9] }}</p>
+            </div>
+        </div>
+
+        <a href="/" class="btn btn-primary mt-4">Quay Lại</a>
+    </div>
+</body>
+</html>

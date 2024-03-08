@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Luận Văn Tốt Nghiệp</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 heading">Danh Sách Luận Văn Tốt Nghiệp</h1>
+        
+        <form class="mt-3 mb-4" method="GET" action="/search">
+            <div class="input-group">
+                <input type="text" class="form-control" name="keyword" placeholder="Nhập từ khóa...">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Tìm Kiếm</button>
+                </div>
+            </div>
+        </form>
+
+        <ul class="list-group">
+            {% for row in data %}
+                <li class="list-group-item">
+                    <a href="/detail/{{ row[0] }}">{{ row[2] }}</a>
+                    <br>{{ row[3] }} - MSSV: {{ row[4] }} - Khóa: {{ row[5] }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

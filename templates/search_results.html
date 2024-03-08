@@ -1,0 +1,29 @@
+{% extends 'top.html' %}
+
+{% block title %}Kết quả tìm kiếm{% endblock %}
+
+{% block content %}
+<div id="container" class="container-list">
+    <h1 class="mt-5 heading">Kết Quả Tìm Kiếm</h1>
+    <p>Kết quả tìm kiếm cho từ khóa: <strong>{{ keyword }}</strong></p>
+</div>
+
+<ul class="list-group">
+    {% for result in results %}
+    <li class="list-group-item">
+        <a href="/detail/{{ result[0] }}">{{ result[3] }} </a>
+        <br>{{ result[4] }} - MSSV: {{ result[5] }} - Khóa: {{ result[6] }}
+        
+        {% if 'username' in session %}
+            {% set saved = result[0] in saved_thesis_id %}
+            {% if saved %}
+                <button class="deleteThesisButton" data-thesis-id="{{ result[0] }}"><i class="fa-solid fa-bookmark" style="color: #0d77fd;"></i></button>
+            {% else %}
+                <button class="saveThesisButton" data-thesis-id="{{ result[0] }}"><i class="fa-regular fa-bookmark"></i></button>
+            {% endif %}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

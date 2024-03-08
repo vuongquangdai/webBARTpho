@@ -1,0 +1,49 @@
+{% extends 'top.html' %}
+
+{% block title %}Luận văn đã lưu{% endblock %}
+
+{% block content %}
+
+<h2 style="padding-top: 64px;">Xin chào, {{ session['username'] }}!</h2>
+<p>Đây là trang thông tin những luận văn bạn đã lưu.</p>
+
+{% if data %}
+    <ul class="list-group">
+        {% for row in data %}
+        <li class="list-group-item">
+            <a href="/detail/{{ row[0] }}">{{ row[3] }}</a>
+            <br>{{ row[4] }} - MSSV: {{ row[5] }} - Khóa: {{ row[6] }}
+            <button class="deleteThesisButton" data-thesis-id="{{ row[0] }}"><i class="fa-solid fa-bookmark" style="color: #0d77fd;"></i></button>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Không có luận văn nào được lưu.</p>
+{% endif %}
+
+<script>
+    var deleteButtons = document.getElementsByClassName('deleteThesisButton');
+    Array.from(deleteButtons).forEach(function(button) {
+        button.addEventListener('click', function() {
+            var thesisId = this.getAttribute('data-thesis-id');
+            
+            fetch('/delete-favorite-thesis/' + thesisId, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ thesisId: thesisId })
+            })
+            .then(response => {
+                // Xử lý phản hồi nếu cần thiết
+                location.reload(); // Tải lại trang sau khi xóa
+            })
+            .catch(error => {
+                console.error('Có lỗi xảy ra:', error);
+            });
+            
+        });
+    });
+</script>
+
+{% endblock %}

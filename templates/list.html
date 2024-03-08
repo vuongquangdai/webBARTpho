@@ -1,0 +1,37 @@
+{% extends 'top.html' %}
+
+{% block title %}Danh Sách Luận Văn Tốt Nghiệp{% endblock %}
+
+{% block content %}
+
+<div id="container" class="container">
+    <h1 class="heading">Danh Sách Luận Văn Tốt Nghiệp</h1>
+    
+    <form class="search" method="GET" action="/search">
+        <div class="input-group">
+            <input id="search-input" type="text" class="form-control input" name="keyword" placeholder="Nhập từ khóa..." autofocus autocomplete="off">
+            <button id="search-button" type="submit" class="btn btn-primary button">Tìm Kiếm</button>
+        </div>
+        <ul id="suggestion-list" class="suggestion-list"></ul>
+    </form>
+</div>
+
+<ul class="list-group">
+    {% for row in data %}
+        <li class="list-group-item">
+            <a href="/detail/{{ row[0] }}">{{ row[3] }}</a>
+            <br>{{ row[4] }} - MSSV: {{ row[5] }} - Khóa: {{ row[6] }}
+
+            {% if 'username' in session %}
+                {% set saved = row[0] in saved_thesis_id %}
+                {% if saved %}
+                    <button class="deleteThesisButton" data-thesis-id="{{ row[0] }}"><i class="fa-solid fa-bookmark" style="color: #0d77fd;"></i></button>
+                {% else %}
+                    <button class="saveThesisButton" data-thesis-id="{{ row[0] }}"><i class="fa-regular fa-bookmark"></i></button>
+                {% endif %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

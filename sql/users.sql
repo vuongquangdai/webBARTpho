@@ -1,0 +1,51 @@
+--
+-- Cơ sở dữ liệu: `nln`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(2, 'admin', '21232F297A57A5A743894A0E4A801FC3'),
+(3, 'b2016954', '7110EDA4D09E062AA5E4A390B0A572AC0D2C0220'),
+(4, 'vuongquangdai', '81DC9BDB52D04DC20036DBD8313ED055'),
+(5, 'daib2016954@student.ctu.edu.vn', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4'),
+(6, 'vuongquangdai842002@gmail.com', 'D404559F602EAB6FD602AC7680DACBFAADD13630335E951F097AF3900E9DE176B6DB28512F2E000B9D04FBA5133E8B1C6E8DF59DB3A8AB9D60BE4B97CC9E81DB'),
+(7, '1234', '81DC9BDB52D04DC20036DBD8313ED055'),
+(8, 'quangdai', '7110EDA4D09E062AA5E4A390B0A572AC0D2C0220'),
+(9, 'mynhan', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4'),
+(10, 'vqdai', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4');
+
+--
+-- Chỉ mục cho các bảng đã đổ
+--
+
+--
+-- Chỉ mục cho bảng `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+COMMIT;

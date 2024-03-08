@@ -1,0 +1,19 @@
+{% extends 'top.html' %}
+
+{% block title %}Tìm Kiếm Luận Văn Tốt Nghiệp{% endblock %}
+
+{% block content %}    
+<div id="container" class="container">
+    <div class="heading">
+        <h1>Tìm Kiếm</h1><h1>Luận Văn</h1><h1>Tốt Nghiệp</h1>
+    </div>
+    
+    <form class="search" method="GET" action="/search">
+        <div class="input-group">
+            <input id="search-input" type="text" class="form-control input" name="keyword" placeholder="Nhập từ khóa..." autofocus autocomplete="off">
+            <button id="search-button" type="submit" class="btn btn-primary button">Tìm Kiếm</button>
+        </div>
+        <ul id="suggestion-list" class="suggestion-list"></ul>
+    </form>
+</div>   
+{% endblock %}

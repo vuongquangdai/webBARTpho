@@ -1,0 +1,28 @@
+{% extends 'top.html' %}
+
+{% block title %}Đăng nhập{% endblock %}
+
+{% block content %} 
+
+<div class="container">
+    <div class="col-md-6">
+        <h2>Đăng nhập</h2>
+        <form method="POST" action="/login">
+            <div class="form-group">
+                <label for="username">Tên người dùng:</label>
+                <input type="text" class="form-control input" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mật khẩu:</label>
+                <input type="password" class="form-control input" id="password" name="password" required>
+            </div>
+            <div class="submit">
+                <button type="submit" class="btn btn-primary button">Đăng nhập</button>
+                <p class="login_yet">Chưa có tài khoản? <a href="/register">Hãy đăng ký</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

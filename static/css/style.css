@@ -1,0 +1,247 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.zindex-0 {
+    z-index: 0 !important;
+}
+
+.off {
+    display: none !important;
+}
+
+.on {
+    display: block !important;
+}
+
+.border-rad-left {
+    border-radius: 16px 0 0 0 !important;
+}
+
+.border-rad-right {
+    border-radius: 0 16px 0 0 !important;
+}
+
+.none-box-shadow {
+    box-shadow: none !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+/* CSS hearder */
+header {
+    display: flex !important;
+    position: fixed;
+    width: 100%;
+    height: 46px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 0 10px 0 #bebebe;
+}
+
+header img {
+    height: 46px;
+    padding: 8px 20px;
+}
+
+header .header-left {
+    display: flex;
+}
+
+header .header-left a {
+    color: black;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+header i {
+    padding: 0 12px;
+    font-size: 20px;
+}
+
+main {
+    position: relative;
+    height: 100%;
+    position: relative;
+    padding: 0 40px;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.container-list {
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 96px 0 46px 0;
+}
+
+.container-list p {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#container .heading {
+    text-transform: uppercase;
+    display: flex;
+    margin: -20px 0 30px 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#container .heading h1 {
+    padding: 0 5px;
+}
+
+.search {
+    position: relative;
+    display: block;
+    z-index: 100;
+}
+
+.search .input-group {
+    z-index: 100 !important;
+}
+
+.search .input,
+.search .button {
+    border-radius: 16px;
+}
+
+.search .input {
+    padding-left: 24px;
+}
+
+#search-button {
+    z-index: -10;
+}
+
+.input:focus {
+    box-shadow: none !important;
+}
+
+.search .suggestion-list {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px 0 #bebebe;
+    z-index: 10;
+    border-radius: 0 0 16px 16px;
+}
+
+.search .suggestion-list li {
+    list-style-type: none;
+    padding: 8px 20px;
+    margin-left: -32px;
+}
+
+.search .suggestion-list li:hover {
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+.search .suggestion-list a {
+    color: black;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+/* CSS list */
+
+.list-group-item  a{
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+/* CSS login */
+.form-group {
+    margin-bottom: 12px !important;
+}
+
+.submit {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.button {
+    width: 135px;
+}
+
+.login_yet {
+    padding-top: 12px;
+}
+
+/* CSS button */
+#saveThesisButton, .saveThesisButton, .deleteThesisButton {
+    position: absolute;
+    right: 10px;
+    bottom: 16px;
+    padding: 0px 12px;
+    border: 1px solid #bebebe;
+    background-color: white;
+    border: none;
+}
+
+#saveThesisButton i, .saveThesisButton i, .deleteThesisButton i {
+    font-size: 20px;
+}
+
+/*  CSS detail */
+.detail {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+}
+
+.detail-save {
+    right: 0px !important;
+    bottom: 32px !important;
+}
+
+.detail-save i {
+    font-size: 26px !important;
+}
+
+.goback {
+    position: absolute;
+    top: 78px;
+}
+
+.foot {
+    padding: 20px;
+}
